@@ -1,6 +1,3 @@
-## ALL WORKS EXCEPT FOR THE PLAY METHOD 
-## CAN'T GET IT TO LOOK AT BOTH INTEGERS AND STRINGS
-
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -28,8 +25,8 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   user_response = gets.chomp
-  user_integer = user_response.to_i 
-    if user_integer == 0
+  user_integer = user_response.to_i # converting the response to an integer so we can test on it later
+    if user_integer == 0 #if the converted response returns 0, it's either because the user typed in 0 (in which case it's an invalid input) or because they typed in a string, and our converter has converted that string into a 0.. so we move onto the 'if' section for string
       if songs.include?(user_response)
         puts "Playing #{user_response}" 
       else 
